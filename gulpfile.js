@@ -2,13 +2,15 @@
 
 var 
    gulp  = require('gulp'),
-   sass  = require('gulp-ruby-sass'),
+   sass  = require('gulp-sass'),
    watch = require('gulp-watch');
 
 
 // TASK PARA O SASS
 gulp.task('sass', function(){
-   return sass('sass/**/*.sass').pipe(gulp.dest('css'));
+   return gulp.src('sass/**/*.sass')
+          .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+          .pipe(gulp.dest('css'));
 });
 
 

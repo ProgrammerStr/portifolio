@@ -1,0 +1,41 @@
+/* ======= COLORS */
+$preto: #000
+$branco: #fff
+
+/* ======== FONT */
+$light: 400
+$regular: 500
+$bold: 700
+
+/* ======== MOBILE */
+$celular: max-width 440px
+$tablet: max-width 991px
+
+// ======== MIXNS */
+=flexbox
+	display: -webkit-box
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flexbox
+	display: flex
+
+=transitions($transitions...)
+	-moz-transition:   all $transitions linear
+	-o-transition:     all $transitions linear
+	-webkit-transition all $transitions linear
+	transition         all $transitions linear
+
+=border-radius($radius)
+	-webkit-border-radius: $radius
+	-moz-border-radius: $radius
+	-ms-boder-radius: $radius
+	border-radius: $radius
+
+@function calculetRem($size)
+	$remSize: $size / 16px
+	@return $remSize = 1rem
+
+=background-opacity($color: #000, $opacity: 0.85)
+	background: $color
+	background: rgba($color, $opacity)
+
