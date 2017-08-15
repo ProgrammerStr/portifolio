@@ -1,6 +1,7 @@
 /* ======= COLORS */
 $preto: #000
 $branco: #fff
+$azul: blue;
 
 /* ======== FONT */
 $light: 400
@@ -8,8 +9,8 @@ $regular: 500
 $bold: 700
 
 /* ======== MOBILE */
-$celular: max-width 440px
 $tablet: max-width 991px
+$celular: max-width 440px
 
 // ======== MIXNS */
 =flexbox
@@ -31,7 +32,17 @@ $tablet: max-width 991px
 	-ms-boder-radius: $radius
 	border-radius: $radius
 
-@function calculetRem($size)
+=gradient($angle,$gradient1, $gradient2)
+  background-color: $gradient2 
+  background-image: -webkit-gradient(linear, $angle, from($gradient1), to($gradient2))
+  background-image: -webkit-linear-gradient($angle, $gradient1, $gradient2)
+  background-image:    -moz-linear-gradient($angle, $gradient1, $gradient2)
+  background-image:     -ms-linear-gradient($angle, $gradient1, $gradient2)
+  background-image:      -o-linear-gradient($angle, $gradient1, $gradient2)
+  background-image:         linear-gradient($angle, $gradient1, $gradient2)
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=$angle,StartColorStr='#{$gradient1}', EndColorStr='#{$gradient2}')
+
+@function calculateRem($size)
 	$remSize: $size / 16px
 	@return $remSize = 1rem
 
@@ -39,3 +50,5 @@ $tablet: max-width 991px
 	background: $color
 	background: rgba($color, $opacity)
 
+@function calcRem($px) 
+	@return $px / 16 + rem;

@@ -1,0 +1,90 @@
+header
+    +clearfix
+
+    min-height: calcRem(475)
+    background:
+        image: url("../images/bg_slide.jpg")
+        repeat: no-repeat
+        position: top center
+        color: $preto
+        attachment: fixed
+        size: cover
+
+    .logo
+        float: left
+        margin: calcRem(20) 0 0
+
+        img
+            width: calcRem(120)
+            height: calcRem(120)
+
+    .links
+        float: right
+        margin: calcRem(60) 0 0
+
+        nav,
+        .social
+            display: inline-block
+
+        nav
+            ul
+                li
+                    display: inline-block
+                    margin: 0 calcRem(18) 0 0
+
+                    a
+                        color: $branco
+                        text-transform: uppercase
+                        font-size: 1rem
+                        font-weight: $light
+
+        nav
+        	+breakpoint($tablet)
+        		display: none
+
+        	+breakpoint($celular)
+        		display: none
+
+        .social
+            li
+                display: inline-block
+                margin: 0 calcRem(10) 0 0
+
+                a
+                    display: block
+                    border: 1px solid $branco
+
+                    +border-radius(100px)
+
+                    padding: calcRem(8) calcRem(10)
+                    color: $branco
+                    font-size: calcRem(20)
+                    text-align: center
+
+    h1
+        clear: both
+        margin: calcRem(230) auto calcRem(20) auto
+        font-size: calcRem(45)
+        font-weight: $light
+        border: 3px solid $branco
+        padding: calcRem(25) calcRem(14)
+
+        +border-radius(10px)
+
+        display: table
+        background-color: rgba(256, 256, 256, 0.1)
+
+        span
+            font-style: italic
+
+    h1
+    	+breakpoint($tablet)
+    		font-size: calcRem(24)
+    	+breakpoint($celular)
+    		font-size: calcRem(17)
+
+    h1,
+    p
+        color: $branco
+        text-align: center
+        text-transform: uppercase
