@@ -1,0 +1,62 @@
+section.sobre
+	.itens
+		+flexbox
+		+align-items(center)
+		+justify-content(space-around)
+		margin: calcRem(50) 0
+		+make-sm-column(10)
+		+make-sm-column-offset(1)
+		text-align: center
+
+		+breakpoint($tablet)
+			display: block
+
+		.perfil
+			+order(3)
+
+			+breakpoint($tablet)
+				margin: 0 0 calcRem(30)
+			img
+				width: 100%
+				max-width: calcRem(230)
+
+				+breakpoint($tablet)
+					max-width: calcRem(200)
+
+		[class^="icons-"]
+			width: 90px
+			height: 90px
+			background-color: #000
+			+border-radius(120px)
+			text-align: center
+			line-height: 85px
+			color: #fff
+			font-size: calcRem(40)
+
+			+breakpoint($tablet)
+				display: inline-block
+				width: 75px
+				height: 75px
+				line-height: 75px
+				font-size: calcRem(35)
+				margin: 0 calcRem(5)
+
+			&.icons-code
+				+order(1)
+				
+			&.icons-html 
+				+order(2)
+
+			&.icons-css
+				+order(4)
+
+			&.icons-hash
+				+order(5)
+
+	.contentText
+		+make-sm-column(8)
+		+make-sm-column-offset(2)
+		text-align: center
+		p
+			font-size: calcRem(20)
+			text-align: justify
