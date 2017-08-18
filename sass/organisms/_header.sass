@@ -9,6 +9,24 @@ header
         color: $preto
         attachment: fixed
         size: cover
+    position: relative
+
+    &::after 
+        content: ''
+        position: absolute
+        width: 100%
+        height: calcRem(50)
+        background-color: transparent
+        +gradient(200deg, rgba(0, 0, 0, 1), rgba(250, 0, 0, 0.8))
+        bottom: -25px
+
+        +breakpoint($tablet)
+            height: calcRem(40)
+            bottom: -20px
+
+        +breakpoint($celular)
+            height: calcRem(30)
+            bottom: -15px
 
     .logo
         float: left

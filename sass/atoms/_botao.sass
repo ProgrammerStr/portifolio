@@ -1,10 +1,15 @@
-a.botao
-	clear: both
-	display: table
-	margin: calcRem(40) auto calcRem(20) auto
+.botao
 	border: 2px solid $preto
 	color: $preto
-	padding: calcRem(10) calcRem(20)
-	+border-radius(8px)
 	text-transform: uppercase
-	font-size: calcRem(20)
+	+transitions(0.4s)
+
+	&:hover
+		border-color: rgba(230, 0, 0, 0.8)
+		color: rgba(230, 0, 0, 0.8)
+
+	&:focus
+		border-color: rgba(230, 0, 0, 0.5)
+		color: rgba(230, 0, 0, 0.5)
+		
+
